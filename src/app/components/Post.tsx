@@ -11,6 +11,11 @@ import { useRef } from 'react';
 // const comment_button = document.getElementById("comment");
 // document.addEventListener("click",() => addComment);
 
+// @TODO write an api that exposes files from a local endpoint, and allows you to query 
+// stored comments 
+
+
+const COMMENT_SRV_URL = "http://127.0.0.1:8000"
 
 export default function Post() {
 
@@ -18,7 +23,12 @@ export default function Post() {
 
     function addComment() {
         if (myRef.current) {
+            const post_txt = myRef.current.value;
             console.log(myRef.current.value);
+            const resp = fetch(`COMMENT_SRV_URL/save_comment/{}`, {
+                method: "POST",
+                body: JSON.stringify({ txt: post_txt }),
+            })
             myRef.current.value = "";
         }
        
