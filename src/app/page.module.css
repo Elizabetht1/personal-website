@@ -107,6 +107,15 @@ a.secondary {
   flex-shrink: 0;
 }
 
+.imageContainer {
+  margin-bottom: var(--spacing-md);
+}
+
+.imageContainer img {
+  max-width: 200px;
+  height: auto;
+  display: block;
+}
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
@@ -169,8 +178,8 @@ a.secondary {
 .link_container {
   display: flex;
   justify-content: center;
-  background-color: lightblue; 
-  border: 3px solid red; /* Very visible test */
+  /* background-color: lightblue;  */
+  /* border: 3px solid red; Very visible test */
 }
 
 .links {
@@ -182,16 +191,19 @@ a.secondary {
 .bio {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  background-color: lightblue; 
+  /* background-color: lightblue;  */
 }
 
 .bio div {
-  border: 3px solid black; 
+  /* border: 3px solid black;  */
   padding: 1rem;
 }
 
 .draft {
-  border: 3px solid red; /* Very visible test */
+  /* border: 3px solid red; Very visible test */
   padding: 1rem;
 }
 
+.update:hover {
+  font-weight: bold;
+}

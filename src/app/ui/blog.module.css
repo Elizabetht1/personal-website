@@ -1,30 +1,248 @@
+/* Page uses global styling from globals.css and extends here */
+
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
   display: flex;
   flex-direction: column;
-  /* grid-template-rows: 20px 1fr 20px; */
   align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
-  
+  min-height: 100vh;
+}
+
+.page h1 {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
 }
 
 .main {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
-  grid-row-start: 2;
-  padding: 1em;
-  background-color: red;
+  gap: var(--spacing-lg);
+}
+
+
+/* Experience container - row layout */
+.postsContainer{
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1400px;
+}
+
+/* Individual post box */
+.post {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  min-height: 300px;
+  padding: var(--spacing-md);
+  background: var(--background);
+}
+
+/* Title upper-left */
+.post h3 {
+  font-size: var(--font-size-large);
+  font-weight: 400;
+  margin-bottom: var(--spacing-sm);
+  text-align: left;
+}
+
+/* Row layout for image + text content */
+.postContent {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-md);
+  align-items: flex-start;
+}
+
+/* Fixed-size image */
+.postImage {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+}
+
+.postImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Column layout for text, link, button */
+.postText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.postText object {
+  width: 100%;
+  height: 200px;
+  border: none;
+}
+
+.postText a {
+  font-size: 14px;
+}
+
+.commentRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+
+/* Icon button style */
+.commentButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  width: 28px;
+  height: 28px;
+}
+
+.commentButton img {
+  width: 100%;
+  height: 100%;
+}
+
+/* db output */
+.outputContainer {
+  background: #f5f5f5;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  overflow-x: auto;
+  width: 35em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.outputContainer p {
+  align-self: center;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre;
+  margin: 0;
+  color: #2a2a2a;
+}
+
+.queryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  width: 100%;
+  max-width: 800px;
+  margin: var(--spacing-md) auto;
+  flex-shrink: 0; /* Prevents shrinking */
+}
+
+
+.query {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-sm);
+  align-items: stretch;
+}
+
+.query input {
+  flex: 1;
+  min-height: 50px;
+  /* padding: var(--spacing-sm); */
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  resize: vertical;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.query input::placeholder {
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+
+
+.query button {
+  /* padding: var(--spacing-sm) var(--spacing-md); */
+  background: none;
+  border: none;
+  /* align-self: flex-c; */
+}
+
+.dbContnet{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  /* width: fit-content; */
+}
+
+.commentsContainer {
+  font-family: 'Spectral', serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.commentsContainer button {
+  background: none;
+  border: none;
+  font-family: 'Spectral', serif;
+  font-size: medium;
+}
+
+.commentsContainer button:hover {
+  background: lightgray;
+  font-weight: bold;
+  border: none;
+
+}
+
+.commentsContainer p {
+  font-size: small;
+  border: none;
+
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .experiencesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
   
+  .experience {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .experienceContent {
+    flex-direction: column;
+  }
+  
+  .experienceImage {
+    width: 80px;
+    height: 80px;
+  }
+  .output {
+    padding: var(--spacing-sm);
+  }
+  
+  .output p {
+    font-size: 12px;
+  }
 }

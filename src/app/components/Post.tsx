@@ -2,7 +2,7 @@
 'use client'
 
 import Image from "next/image"
-import styles from '@/app/ui/post.module.css';
+import styles from '@/app/ui/blog.module.css';
 import { useState } from 'react';
 import { useRef } from 'react';
 // import { createRoot } from 'react-dom/client';
@@ -17,18 +17,25 @@ import { useRef } from 'react';
 
 const COMMENT_SRV_URL = "http://127.0.0.1:8000"
 
-export default function Post() {
+export default function Post({title, src,link}) {
 
     const myRef = useRef(null);
 
-    function addComment() {
+    async function addComment() {
         if (myRef.current) {
             const post_txt = myRef.current.value;
-            console.log(myRef.current.value);
-            const resp = fetch(`COMMENT_SRV_URL/save_comment/{}`, {
+            console.log(post_txt);
+            const resp = await fetch(`${COMMENT_SRV_URL}/save_comment/`, {
                 method: "POST",
-                body: JSON.stringify({ txt: post_txt }),
-            })
+                headers: {
+                    'Content-Type': 'application/json',  // Changed to JSON
+                },
+                body: JSON.stringify({ txt: post_txt }),  // Send as JSON object
+            });
+            const b = await resp.json();
+            console.log(b);
+
+
             myRef.current.value = "";
         }
        
@@ -42,20 +49,31 @@ export default function Post() {
 
 
     
-    return <div className={styles.blog_post_container}>
-        
-        <Image src="/cat.png" height={100} width={100}  alt="post-thumbnail"/>
-        <div className={styles.blog_post_text}>
-            <h3> Post title! </h3>
-            <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
-            in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
-            nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
-            sunt in culpa qui officia deserunt mollit anim id est laborum </p>
-            <button id="comment" onClick={addComment}> Add A Comment! </button>
-            <input type="text" id="post-comment-txt" name="fname" placeholder="Leave a Comment!" ref={myRef} ></input>
+    return <div className={styles.post}>
+        <h3> {title} </h3>
+        <div className={styles.postContent}>
+            <div className={styles.postImage}> <Image src="/cat.png" height={100} width={100}  alt="post-thumbnail"/> </div>
+            <div className={styles.postText}>
+                <object data={src}></object>
+                <a href={link}> See the full post! </a>
+                <div className={styles.commentRow}>
+                    <button className={styles.commentButton} onClick={addComment}>
+                    <Image
+                        src="/submitpost.png"   
+                        alt="Add comment"
+                        width={28}
+                        height={28}
+                    />
+                    </button>
+                    <input
+                        type="text"
+                        placeholder="Leave a Comment!"
+                        ref={myRef}
+                    />
+                </div>
+            </div>
+           
         </div>
+        
     </div>
 }

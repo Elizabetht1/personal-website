@@ -6,6 +6,14 @@ export default function Layout({
   children: React.ReactNode;
 }) {
   return (
-    <h1> {children} </h1>
+    <html lang="en">
+      <head> 
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Spectral:wght@300;400;600&display=swap" rel="stylesheet"></link>
+      </head>
+      <body>{children}</body>
+      
+    </html>
+    
   );
 }

@@ -12,21 +12,22 @@ export default function Page() {
     <div className={styles.page}>
         <h1> Experience! </h1>
         <main className={styles.main}>
-             <div className = {inter.className}>
-                <div>
-
-                </div>
-                <Image
-                    src="/cat.png"
-                    height={500}
-                    width={500}
-                    alt="cat"
+            
+            <div className={styles.imageContainer}><img src="/cat.png"/></div>
+   
+            <div className={styles.experiencesContainer}>
+                <Experience
+                title={"Research Assitant @ RPAD"}
+                src={"/rpad.txt"}
                 />
-            </div>
-            <div id='experience-container'>
-                <Experience/>
-                <Experience/>
-                <Experience/>
+                <Experience
+                title={"AI Intern @ Medtornic"}
+                src={"/medtronic.txt"}
+                />
+                <Experience
+                title={"Software Autonomy @ CMU Lunabotics"}
+                src={"/lunabotics.txt"}
+                />
             </div>
             
         </main>
