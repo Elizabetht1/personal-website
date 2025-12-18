@@ -15,7 +15,7 @@ const net = require('net');
 
 
 export default function Database() {
-    const queryRef = useRef(null);
+    const queryRef = useRef<HTMLInputElement | null>(null);
     const [txt, setTxt] = useState("");
     const db_proxy_url = "http://localhost:3000/"
 
@@ -43,7 +43,7 @@ export default function Database() {
             const info = await resp.text();
             setTxt(info);
             console.log(info);
-            queryRef.current.value = null;
+            queryRef.current.value = "";
         }
         
     };
