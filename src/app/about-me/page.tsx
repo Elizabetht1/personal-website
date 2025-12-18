@@ -1,8 +1,8 @@
 
 import styles from '@/app/ui/aboutme.module.css';
-import {inter} from '@/app/ui/font';
-import Image from 'next/image';
-import Link from 'next/link';
+// import {inter} from '@/app/ui/font';
+// import Image from 'next/image';
+// import Link from 'next/link';
 import Navigation from '../components/Nav';
 import Experience from '../components/Experience';
 

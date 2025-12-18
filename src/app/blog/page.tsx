@@ -1,11 +1,11 @@
 
 import styles from '@/app/ui/blog.module.css';
-import {inter} from '@/app/ui/font';
-import Image from 'next/image';
-import Link from 'next/link';
+// import {inter} from '@/app/ui/font';
+// import Image from 'next/image';
+// import Link from 'next/link';
 import Navigation from '../components/Nav';
 import Post from '../components/Post';
-import Comments from '../components/Comments';
+// import Comments from '../components/Comments';
 
 export default function Page() {
     return (

@@ -1,4 +1,4 @@
-import Image from "next/image";
+// import Image from "next/image";
 import styles from "./page.module.css";
 import Navigation from "./components/Nav";
 
@@ -13,11 +13,11 @@ export default function Home() {
           </div>
           <div>
           <p>
-            Hi! I'm Elizabeth. I'm a junior at Carnegie Mellon University studying
+            Hi! I&apos;m Elizabeth. I&apos;m a junior at Carnegie Mellon University studying
             Computer Science and Machine Learning.
             I am interested in computer vision and embodied AI, 
             with a focus on applications to healthcare. 
-            I'm particularly interested in developing architectures 
+            I&apos;m particularly interested in developing architectures 
             that work well in resource-constrained settings 
             where there are bottlenecks in acquiring data, 
             labeling data, and making inferences.

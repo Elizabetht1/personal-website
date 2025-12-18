@@ -18,7 +18,6 @@ export default function Comments() {
      
             <button onClick={renderComments}> See Comments </button>
             <p> {txt} </p>
-        
         </div>
    );
 }

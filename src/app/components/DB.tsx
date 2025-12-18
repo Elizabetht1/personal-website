@@ -1,14 +1,15 @@
 'use client'
 
 import styles from '@/app/ui/blog.module.css';
-import {inter} from '@/app/ui/font';
+// import {inter} from '@/app/ui/font';
 import Image from 'next/image';
-import Link from 'next/link';
-import Navigation from '../components/Nav';
+// import Link from 'next/link';
+// import Navigation from '../components/Nav';
 import Comments from './Comments';
 import { useState, useRef} from 'react';
 
-const net = require('net');
+// import {net} from 'net';
+// const net = require('net');
 
 
 

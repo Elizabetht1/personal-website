@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navigation from '../components/Nav';
 import Database from '../components/DB';
-const net = require('net');
+// const net = require('net');
 
 
 

@@ -17,9 +17,9 @@ import { useRef } from 'react';
 
 const COMMENT_SRV_URL = "http://127.0.0.1:8000"
 
-export default function Post({title, src,link}) {
+export default function Post({title, src,link} : {title: string; src: string,link:string}) {
 
-    const myRef = useRef(null);
+    const myRef = useRef<HTMLInputElement | null>(null)
 
     async function addComment() {
         if (myRef.current) {
