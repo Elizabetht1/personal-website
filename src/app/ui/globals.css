@@ -7,9 +7,9 @@
   
   /* Typography */
   --font-primary: 'Spectral', serif;
-  --font-size-base: 16px;
-  --font-size-large: 20px;
-  --font-size-xlarge: 28px;
+  --font-size-base: 24px;
+  --font-size-large: 28px;
+  --font-size-xlarge: 34px;
   --line-height: 1.6;
   
   /* Spacing */
@@ -20,7 +20,7 @@
   --spacing-xl: 4rem;
   
   /* Layout */
-  --content-max-width: 700px;
+  --content-max-width: 1000px;
   --nav-height: 80px;
   
   /* Transitions */
@@ -53,24 +53,28 @@ body {
 
 /* Central Column Layout */
 main {
-  max-width: var(--content-max-width);
+  max-width:  65em;
   margin: 0 auto;
   padding: var(--spacing-lg) var(--spacing-md);
 }
 
 /* Navigation at Bottom */
-nav {
-  position: fixed;
-  bottom: 0;
+.nav {
+  /* position: fixed; */
+  /* bottom: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   height: var(--nav-height);
   background: var(--background);
-  border-top: 1px solid var(--border);
+  /* border-top: 1px solid var(--border); */
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  gap: 1em;
 }
+
+
 
 /* Typography Defaults */
 h1 {
@@ -103,18 +107,18 @@ a:hover {
 }
 
 @media screen and (max-width: 400px) {
-    .image-container {
+    /* .image-container {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      /* width: fit-content; */
+      width: fit-content;
       gap: 1em;
       
     }
     .image-container img {
         max-height: 10em;
         object-fit: contain;
-    }
+    } */
     :root {
     --font-size-base: 15px;
     --font-size-large: 18px;
@@ -131,18 +135,18 @@ a:hover {
 
 
 @media screen and (min-width: 600px) {
-    .image-container {
+    /* .image-container {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        /* gap: 1em; */
+        gap: 1em;
     }
 
     .image-container img {
       max-height: 20em;
       object-fit: contain;
-    }
+    } */
     :root {
     --spacing-lg: 4rem;
     --spacing-xl: 6rem;
@@ -151,4 +155,15 @@ a:hover {
     main {
       padding: var(--spacing-xl) var(--spacing-md);
     }
+}
+
+.socials {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.footer {
+  padding: 0;
+  margin: 0;
 }

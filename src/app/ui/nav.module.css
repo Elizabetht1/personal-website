@@ -1,0 +1,15 @@
+.nav {
+    background-color:  #2a2a2a;
+    width: 57.75em;
+    display: flex;
+    justify-content: space-evenly;
+    color: #fafaf8;
+    gap: 1em;
+    padding: 2.5%;
+}
+
+.nav a {
+   display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
